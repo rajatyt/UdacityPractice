@@ -11,8 +11,9 @@ import android.widget.Toast;
 import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity {
-    Button add,sub;
+    Button add,sub,faltu;
     int noOfCoffee=0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         add=findViewById(R.id.addBtn);
         sub=findViewById(R.id.subBtn);
+        faltu=findViewById(R.id.button4);
+
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -31,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(noOfCoffee<=0){
-                    Toast.makeText(MainActivity.this, "You cannot have negative quantity", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "cannot have negative quantity", Toast.LENGTH_SHORT).show();
                 }else {
                     noOfCoffee--;
                     display(noOfCoffee);
@@ -42,8 +45,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void submitOrder(View view){
-        display(noOfCoffee);
+        String displayMsg="Thank you for ordering "+noOfCoffee+" coffee";
         displayCurr(noOfCoffee*5);
+        dislayMessage(displayMsg);
+    }
+
+    private void dislayMessage(String msg) {
+        TextView tv=findViewById(R.id.displayTextView);
+        tv.setText(msg);
     }
 
     private void displayCurr(int i) {
