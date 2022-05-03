@@ -11,7 +11,7 @@ import android.widget.Toast;
 import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity {
-    Button add,sub,faltu;
+    Button add,sub;
     int noOfCoffee=0;
 
 
@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         add=findViewById(R.id.addBtn);
         sub=findViewById(R.id.subBtn);
-        faltu=findViewById(R.id.button4);
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
