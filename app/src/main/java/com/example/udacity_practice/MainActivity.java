@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,6 +14,7 @@ import java.text.NumberFormat;
 public class MainActivity extends AppCompatActivity {
     Button add,sub;
     int noOfCoffee=0;
+    ImageView iv;
 
 
     @Override
@@ -21,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         add=findViewById(R.id.addBtn);
         sub=findViewById(R.id.subBtn);
+        iv=findViewById(R.id.imageView);
+        iv.setImageResource(R.drawable.sachin);
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
